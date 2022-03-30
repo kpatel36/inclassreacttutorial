@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import ProviderLayer from './ProviderLayer';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom'; // importing our router componenet to add to our application
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ProviderLayer />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
