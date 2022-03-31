@@ -107,8 +107,8 @@ const Shop = () => {
                         </li>
                         <li className='list-group-item'><span className='float-left font-weight-bold'>Lifespan: </span>{animal.lifespan} | {animal.size} <span className='float-right font-weight-bold'>Length: </span> </li>
                     </ul>
-                    <div className='card-body'>
-                        <p className='card-link'><span className = 'float-left justify-content-center'>${animal.price.toFixed(2)}</span><span className="float-right btn btn-lg btn-info" onClick={() => adoptAnimal(animal)}>Adopt</span></p>
+                    <div className='card-body just-center'>
+                        <p className='card-link justify-content-center'><span className = 'float-left align-text-center'>${animal.price.toFixed(2)}</span><span className="float-right btn btn-lg btn-info" onClick={() => adoptAnimal(animal)}>Adopt</span></p>
                     </div>
                 </div>
                 }) :

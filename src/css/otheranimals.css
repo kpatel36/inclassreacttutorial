@@ -1,4 +1,50 @@
+*{
+    font-family: Tahoma;
+}
+
+
+.deck_title{
+    text-decoration: underline;
+}
+
+.card{
+    border: 5px solid transparent;
+    border-radius: 15px;
+}
+
+
+
+.list-group{
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 15px; 
+    margin:3px
+}
+
+.card-body{
+    padding-bottom: 22px;
+}
+.animal_name{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 .card-img-top{
-    height: auto;
-    width: cover;
+    height: 25vh;
+    width: 100%;
+    padding: 5px;
+    border: 2px solid transparent;
+    border-radius: 24px;
+    object-fit: fill; /*object-fit: cover enables zoom instead of image stretching*/
+    transition: transform 50ms;
+}
+
+.card-img-top:hover{
+    transform:scale(1.15) ;
+}
+
+.list-group-item {
+    max-height: fit-content;
 }

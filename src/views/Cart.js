@@ -71,12 +71,10 @@ const Cart = () => {
                     </div>
                     {/* for each animal in our 'cart', we will create a row for that animal stating the quantity , which will have the info and the capabilities to increase or reduce quantity */}
                     { Object.values(cart.animals).map((animal, index) => {
-                        return <div className="whole_description d-flex flex-row align-items-center justifty-content-between bg-white p-3 mt-4 rounded">
+                        return <div className="whole_description d-flex flex-row justifty-content-between bg-white p-3 mt-4 rounded">
                             <div className="animal_pic align-content-center mr-1"><img className="rounded img-responsive" alt={animal.data.name} src={animal.data.image} width="70"/></div>
-                            <div className="d-flex flex-column align-items-center ml-2 mr-2 animal_name">{animal.data.name}</div>
+                            <div className="d-flex flex-column align-items-center ml-2 mr-2 font-weight-bolder animal_name">{animal.data.name}</div>
                             {/* <div className="d-flex flex-row animal-description"> */}
-                            <div className="size ml-2 mr-2"><span className="font-weight-italic">{animal.data.sci_name}</span></div>
-                            <div className="animal-desc justify-content-center ml-3 mr-3 ">{animal.data.description}</div>
                             <div className="d-flex flex-column justify-content-center ml-3 mr-3 quantity">{animal.quantity}</div>
                             <div className="d-flex flex-column justify-content-center ml-3 mr-3 animal-price">{animal.data.price}</div>
                             <div className="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
@@ -92,7 +90,7 @@ const Cart = () => {
                     })
                     }
                     <div className="d-flex align-items-center bg-white rounded mt-5 mb-5"><button className="btn btn-lg btn-block btn-danger text-white" onClick={clearcart}>Clear Cart</button></div>
-                    <div className="d-flex align-items-center bg-white rounded mt-5"><button className="btn btn-lg btn-block btn-warning text-white" >Proceed to Checkout</button></div>
+                    <div className="d-flex align-items-center bg-white rounded mt-5"><button className="btn btn-lg btn-block btn-success text-white" >Proceed to Checkout</button></div>
                 </div>
                 
             </div>

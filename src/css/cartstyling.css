@@ -4,8 +4,11 @@
     object-fit: fill;
 }
 
-.whole_description{
+.whole_description, .btn-block{
+    display: flex;
+    flex-direction: row;
     border: 3px solid transparent;
-    box-shadow: 2px 1px 4px 0px;
-    filter:drop-shadow(1px 1px 1px lightblue);
+    box-shadow: 2px 1px 4px 0px black;
+    filter:drop-shadow(1px 1px 1px slategray);
+    width: 100%;
 }
