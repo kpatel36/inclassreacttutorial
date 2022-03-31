@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Shop from './views/Shop';
 import Cart from './views/Cart';
+import OtherAnimals from './views/OtherAnimals';
 
 
 const App = () => {
@@ -13,11 +14,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar animals2={animals2}/>
       <Routes>
         {/*Any "page" of my react app can be defined as a Route within my Routes here */}
         <Route children path='/' element={<Home animals2={animals2} setAnimals2={setAnimals2}/>} />
         <Route children path='/shop' element={<Shop />} />
+        <Route children path='/otheranimals' element={<OtherAnimals />} />
         <Route children path ='/cart' element={<Cart />} />
       </Routes>
     </div>

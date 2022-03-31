@@ -29,6 +29,7 @@ const Shop = () => {
         let data = await getAnimalData();
         console.log(data.Animals, typeof data);
         // take this data and set state variable with it
+        //.Animals since ddata was called ANimals in this APIcall
         setAnimals(data.Animals); // want the key because 
     }
 
@@ -76,26 +77,38 @@ const Shop = () => {
 
     return (
         <div className='container'>
-            <div className='row'>
-                <h1>Foxes Animal Market</h1>
+            <div className='row justify-content-center'>
+                <h1 className="mt-5 mb-5">Available to Adopt</h1>
             </div>
-            <div className='row'>
+            <div className='card-deck'>
                 {/* cards for each animal once the animals have actually loaded*/}
                 {typeof animals === 'object' && !animals.then ? animals.map((animal, index)  => { //if it isnt !animals.then, and animals === object, you know you are dealing with your array, not your promise
                     return <div key={index} className="card" style={{width: 18 + 'rem'}}>
                     <img src={animal.image} className="card-img-top" alt={animal.name}/>
                     <div className = "card-body">
-                        <h5 className='card-title'>{animal.name}</h5>
-                        <h6 className = 'card-title font-italic'>{animal.sci_name}</h6>
-                        <p className="card-text"> {animal.description}</p>
+                        <h3 className='card-title font-weight-heavy'>{animal.name}</h3>
                     </div>
                     <ul className='list-group list-group-flush'>
-                        <li className='list-group-item'>{animal.habitat}</li>
-                        <li className='list-group-item'>{animal.diet}</li>
-                        <li className='list-group-item'><span className='float-left'>Lifespan: </span>{animal.lifespan} | {animal.size} <span className='float-right'>Length: </span> </li>
+                        <li className='list-group-item'>
+                            <div className='list-item-header font-weight-bold'>Scientific Name: </div>
+                            <div className = 'card-title font-italic'>{animal.sci_name}</div>
+                        </li>
+                        <li className="list-group-item">
+                            <div className='list-item-header font-weight-bold'>Description:</div>
+                            <div className="card-text"> {animal.description}</div>
+                        </li>
+                        <li className='list-group-item'>
+                            <div className='list-item-header font-weight-bold'>Habitat: </div>
+                            <div className="animal-trait">{animal.habitat}</div>
+                        </li>
+                        <li className='list-group-item'>
+                            <div className='list-item-header font-weight-bold'>Diet: </div>
+                            <div className="animal-trait">{animal.diet}</div>
+                        </li>
+                        <li className='list-group-item'><span className='float-left font-weight-bold'>Lifespan: </span>{animal.lifespan} | {animal.size} <span className='float-right font-weight-bold'>Length: </span> </li>
                     </ul>
                     <div className='card-body'>
-                        <p className='card-link'><span className = 'float-left'>${animal.price.toFixed(2)}</span><span className="float-right btn btn-sm  btn-secondary" onClick={() => adoptAnimal(animal)}>Adopt</span></p>
+                        <p className='card-link'><span className = 'float-left justify-content-center'>${animal.price.toFixed(2)}</span><span className="float-right btn btn-lg btn-info" onClick={() => adoptAnimal(animal)}>Adopt</span></p>
                     </div>
                 </div>
                 }) :

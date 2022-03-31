@@ -1,0 +1,11 @@
+.animal_pic{
+    width:auto;
+    height: 100%;
+    object-fit: fill;
+}
+
+.whole_description{
+    border: 3px solid transparent;
+    box-shadow: 2px 1px 4px 0px;
+    filter:drop-shadow(1px 1px 1px lightblue);
+}
