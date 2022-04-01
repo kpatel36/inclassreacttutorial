@@ -86,9 +86,9 @@ let OtherAnimals = () => {
                 <h1>Finding some cool animals..</h1>
                 }
             </div>
-            <div className=" row footer-elements justify-content-center d-flex flex-columnn">
-                <button className = "btn btn-secondary" onClick={OtherAnimals}>See Other Animals</button>
-                <a className="zoo-animal-link" href="https://zoo-animal-api.herokuapp.com/">Zoo-Animal Api Used</a>
+            <div className="row footer-elements justify-content-center d-flex flex-column">
+                <button type="button" className = "btn btn-lg btn-secondary m-3" onClick={loadZooAnimalData}>See Other Animals</button>
+                <a className="zoo-animal-link m-5" href="https://zoo-animal-api.herokuapp.com/">Zoo-Animal Api Used</a>
             </div>
         </div>
 
